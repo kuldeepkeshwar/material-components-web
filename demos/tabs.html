@@ -15,7 +15,7 @@ limitations under the License
 <html>
   <head>
     <meta charset="utf-8">
-    <title>MDC-Web Tabs Demo</title>
+    <title>MDC-Web Tab Bar Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -123,41 +123,41 @@ limitations under the License
   <body class="mdc-typography">
     <div class="demo-body">
 
-      <h1>Tabs</h1>
+      <h1>Tab Bar</h1>
       <button type="button" class="mdc-button mdc-button--primary" id="toggle-rtl">Toggle RTL</button>
       <button type="button" class="mdc-button mdc-button--primary" id="toggle-dark-theme">Toggle Dark Theme</button>
 
       <section>
-        <h2>Basic tabs</h2>
-        <nav id="basic-tabs" class="mdc-tabs">
+        <h2>Basic Tab Bar</h2>
+        <nav id="basic-tab-bar" class="mdc-tab-bar">
           <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
           <a class="mdc-tab" href="#two">Item Two</a>
           <a class="mdc-tab" href="#three">Three</a>
-          <span class="mdc-tabs__indicator"></span>
+          <span class="mdc-tab-bar__indicator"></span>
         </nav>
       </section>
 
       <section>
-        <h2>CSS-Only Tabs</h2>
-        <nav class="mdc-tabs">
+        <h2>CSS-Only Tab Bar</h2>
+        <nav class="mdc-tab-bar">
           <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
           <a class="mdc-tab" href="#two">Item Two</a>
           <a class="mdc-tab" href="#three">Three</a>
-          <span class="mdc-tabs__indicator"></span>
+          <span class="mdc-tab-bar__indicator"></span>
         </nav>
       </section>
 
       <section>
-        <h2>Scrollable tabs</h2>
+        <h2>Tab Bar Scroller</h2>
 
-        <div id="tabs-scroller" class="mdc-tabs-scroller">
-          <div class="mdc-tabs-scroller__indicator mdc-tabs-scroller__indicator--back">
-            <a class="mdc-tabs-scroller__indicator__inner material-icons" href="#" aria-label="Click to scroll back">
+        <div id="tab-bar-scroller" class="mdc-tab-bar-scroller">
+          <div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
+            <a class="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="Click to scroll back">
                   keyboard_arrow_left
             </a>
           </div>
-          <div class="mdc-tabs-scroller__scroll-frame">
-            <nav id="scrollable-tabs" class="mdc-tabs mdc-tabs-scroller__scroll-frame__tabs">
+          <div class="mdc-tab-bar-scroller__scroll-frame">
+            <nav id="scrollable-tab-bar" class="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs">
               <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
               <a class="mdc-tab" href="#two">Item Two</a>
               <a class="mdc-tab" href="#three">Item Three</a>
@@ -167,11 +167,11 @@ limitations under the License
                   <a class="mdc-tab" href="#seven">Item Seven</a>
                   <a class="mdc-tab" href="#eight">Item Eight</a>
                   <a class="mdc-tab" href="#nine">Item Nine</a>
-              <span class="mdc-tabs__indicator"></span>
+              <span class="mdc-tab-bar__indicator"></span>
             </nav>
           </div>
-          <div class="mdc-tabs-scroller__indicator mdc-tabs-scroller__indicator--forward">
-            <a class="mdc-tabs-scroller__indicator__inner material-icons" href="#" aria-label="Click to scroll forward">
+          <div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward">
+            <a class="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="Click to scroll forward">
               keyboard_arrow_right
             </a>
           </div>
@@ -179,8 +179,8 @@ limitations under the License
       </section>
 
       <section>
-        <h2>Icon tabs</h2>
-        <nav id="icon-tabs" class="mdc-tabs mdc-tabs--icon-tabs">
+        <h2>Icon Tab Labels</h2>
+        <nav id="icon-tab-bar" class="mdc-tab-bar mdc-tab-bar--icon-tabs">
           <a class="mdc-tab mdc-tab--active" href="#recents">
             <i class="material-icons mdc-tab__icon" aria-label="Recents">phone</i>
           </a>
@@ -190,13 +190,13 @@ limitations under the License
           <a class="mdc-tab" href="#nearby">
             <i class="material-icons mdc-tab__icon" aria-label="nearby">person_pin</i>
           </a>
-          <span class="mdc-tabs__indicator"></span>
+          <span class="mdc-tab-bar__indicator"></span>
         </nav>
       </section>
 
       <section>
-        <h2>CSS-Only Icon tabs</h2>
-        <nav class="mdc-tabs mdc-tabs--icon-tabs">
+        <h2>CSS-Only Icon Labels</h2>
+        <nav class="mdc-tab-bar mdc-tab-bar--icon-tabs">
           <a class="mdc-tab mdc-tab--active" href="#recents">
             <i class="material-icons mdc-tab__icon" aria-label="Recents">phone</i>
           </a>
@@ -206,13 +206,13 @@ limitations under the License
           <a class="mdc-tab" href="#nearby">
             <i class="material-icons mdc-tab__icon" aria-label="nearby">person_pin</i>
           </a>
-          <span class="mdc-tabs__indicator"></span>
+          <span class="mdc-tab-bar__indicator"></span>
         </nav>
       </section>
 
       <section>
-        <h2>Icons with text</h2>
-        <nav id="icon-text-tabs" class="mdc-tabs mdc-tabs--icons-with-text">
+        <h2>Icon & Text Labels</h2>
+        <nav id="icon-text-tab-bar" class="mdc-tab-bar mdc-tab-bar--icons-with-text">
           <a class="mdc-tab mdc-tab--active" href="#recents">
             <i class="material-icons mdc-tab__icon" aria-hidden="true">phone</i>
             <span class="mdc-tab__icon-text">Recents</span>
@@ -225,13 +225,13 @@ limitations under the License
             <i class="material-icons mdc-tab__icon" aria-hidden="true">person_pin</i>
             <span class="mdc-tab__icon-text">Nearby</span>
           </a>
-          <span class="mdc-tabs__indicator"></span>
+          <span class="mdc-tab-bar__indicator"></span>
         </nav>
       </section>
 
       <section>
-        <h2>CSS-Only Icons with text</h2>
-        <nav id="icon-text-tabs" class="mdc-tabs mdc-tabs--icons-with-text">
+        <h2>CSS-Only Icon & Text Labels</h2>
+        <nav id="icon-text-tab-bar" class="mdc-tab-bar mdc-tab-bar--icons-with-text">
           <a class="mdc-tab mdc-tab--active" href="#recents">
             <i class="material-icons mdc-tab__icon" aria-hidden="true">phone</i>
             <span class="mdc-tab__icon-text">Recents</span>
@@ -244,47 +244,47 @@ limitations under the License
             <i class="material-icons mdc-tab__icon" aria-hidden="true">person_pin</i>
             <span class="mdc-tab__icon-text">Nearby</span>
           </a>
-          <span class="mdc-tabs__indicator"></span>
+          <span class="mdc-tab-bar__indicator"></span>
         </nav>
       </section>
 
       <section>
         <h2>Primary Color Indicator</h2>
-        <nav id="primary-indicator-tabs" class="mdc-tabs mdc-tabs--indicator-primary">
+        <nav id="primary-indicator-tab-bar" class="mdc-tab-bar mdc-tab-bar--indicator-primary">
           <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
           <a class="mdc-tab" href="#two">Item Two</a>
           <a class="mdc-tab" href="#three">Three</a>
-          <span class="mdc-tabs__indicator"></span>
+          <span class="mdc-tab-bar__indicator"></span>
         </nav>
       </section>
 
       <section>
         <h2>Primary Color Indicator - CSS-Only</h2>
-        <nav class="mdc-tabs mdc-tabs--indicator-primary">
+        <nav class="mdc-tab-bar mdc-tab-bar--indicator-primary">
           <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
           <a class="mdc-tab" href="#two">Item Two</a>
           <a class="mdc-tab" href="#three">Three</a>
-          <span class="mdc-tabs__indicator"></span>
+          <span class="mdc-tab-bar__indicator"></span>
         </nav>
       </section>
 
       <section>
         <h2>Accent Color Indicator</h2>
-        <nav id="accent-indicator-tabs" class="mdc-tabs mdc-tabs--indicator-accent">
+        <nav id="accent-indicator-tab-bar" class="mdc-tab-bar mdc-tab-bar--indicator-accent">
           <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
           <a class="mdc-tab" href="#two">Item Two</a>
           <a class="mdc-tab" href="#three">Three</a>
-          <span class="mdc-tabs__indicator"></span>
+          <span class="mdc-tab-bar__indicator"></span>
         </nav>
       </section>
 
       <section>
         <h2>Accent Color Indicator - CSS-Only</h2>
-        <nav class="mdc-tabs mdc-tabs--indicator-accent">
+        <nav class="mdc-tab-bar mdc-tab-bar--indicator-accent">
           <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
           <a class="mdc-tab" href="#two">Item Two</a>
           <a class="mdc-tab" href="#three">Three</a>
-          <span class="mdc-tabs__indicator"></span>
+          <span class="mdc-tab-bar__indicator"></span>
         </nav>
       </section>
 
@@ -296,11 +296,11 @@ limitations under the License
               <h2 class="mdc-toolbar__title">Title</h2>
             </div>
             <div class="mdc-toolbar__section mdc-toolbar__section--align-end">
-              <nav id="toolbar-tabs" class="mdc-tabs">
+              <nav id="toolbar-tab-bar" class="mdc-tab-bar">
                 <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
                 <a class="mdc-tab" href="#two">Item Two</a>
                 <a class="mdc-tab" href="#three">Item Three</a>
-                <span class="mdc-tabs__indicator"></span>
+                <span class="mdc-tab-bar__indicator"></span>
               </nav>
             </div>
           </div>
@@ -308,11 +308,11 @@ limitations under the License
       </section>
 
       <section>
-        <h2>Within mdc-toolbar - fixed to bottom of toolbar</h2>
+        <h2>Within MDCToolbar - fixed to bottom of toolbar</h2>
         <div class="demo-note">
           <em>
             Note: We want to avoid too many modifier classes for layouts like this. Therefore, we recommend overriding the style of
-            <code>mdc-toolbar__section</code> for the <code>MDC-Tabs</code> instance you'd like affixed to the bottom edge of mdc-toolbar. The style used to acheive this example is:
+            <code>mdc-toolbar__section</code> for the <code>MDCTabBar</code> instance you'd like affixed to the bottom edge of mdc-toolbar. The style used to acheive this example is:
           </em>
           <br />
           <br />
@@ -330,11 +330,11 @@ limitations under the License
               <h1 class="mdc-toolbar__title">Title</h1>
             </div>
             <div class="mdc-toolbar__section my-modified-toolbar-section">
-              <nav id="toolbar-tabs-modified" class="mdc-tabs">
+              <nav id="toolbar-tab-bar-modified" class="mdc-tab-bar">
                 <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
                 <a class="mdc-tab" href="#two">Item Two</a>
                 <a class="mdc-tab" href="#three">Item Three</a>
-                <span class="mdc-tabs__indicator"></span>
+                <span class="mdc-tab-bar__indicator"></span>
               </nav>
             </div>
           </div>
@@ -349,7 +349,7 @@ limitations under the License
               <h1 class="mdc-toolbar__title">Title</h1>
             </div>
             <div class="mdc-toolbar__section mdc-toolbar__section--align-end">
-              <nav class="mdc-tabs">
+              <nav class="mdc-tab-bar">
                 <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
                 <a class="mdc-tab" href="#two">Item Two</a>
                 <a class="mdc-tab" href="#three">Item Three</a>
@@ -371,10 +371,10 @@ limitations under the License
               <h1 class="mdc-toolbar__title">Title</h1>
             </div>
             <div class="mdc-toolbar__section mdc-toolbar__section--align-end">
-              <nav id="toolbar-tabs-primary-indicator" class="mdc-tabs mdc-tabs--indicator-primary">
+              <nav id="toolbar-tab-bar-primary-indicator" class="mdc-tab-bar mdc-tab-bar--indicator-primary">
                 <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
                 <a class="mdc-tab" href="#two">Item Two</a> <a class="mdc-tab" href="#three">Item Three</a>
-                <span class="mdc-tabs__indicator"></span>
+                <span class="mdc-tab-bar__indicator"></span>
               </nav>
             </div>
           </div>
@@ -389,11 +389,11 @@ limitations under the License
               <h1 class="mdc-toolbar__title">Title</h1>
             </div>
             <div class="mdc-toolbar__section mdc-toolbar__section--align-end">
-              <nav class="mdc-tabs mdc-tabs--indicator-primary">
+              <nav class="mdc-tab-bar mdc-tab-bar--indicator-primary">
                 <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
                 <a class="mdc-tab" href="#two">Item Two</a>
                 <a class="mdc-tab" href="#three">Item Three</a>
-                <span class="mdc-tabs__indicator"></span>
+                <span class="mdc-tab-bar__indicator"></span>
               </nav>
             </div>
           </div>
@@ -408,11 +408,11 @@ limitations under the License
               <h1 class="mdc-toolbar__title">Title</h1>
             </div>
             <div class="mdc-toolbar__section mdc-toolbar__section--align-end">
-              <nav id="toolbar-tabs-accent-indicator" class="mdc-tabs mdc-tabs--indicator-accent">
+              <nav id="toolbar-tab-bar-accent-indicator" class="mdc-tab-bar mdc-tab-bar--indicator-accent">
                 <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
                 <a class="mdc-tab" href="#two">Item Two</a>
                 <a class="mdc-tab" href="#three">Item Three</a>
-                <span class="mdc-tabs__indicator"></span>
+                <span class="mdc-tab-bar__indicator"></span>
               </nav>
             </div>
           </div>
@@ -427,11 +427,11 @@ limitations under the License
               <h1 class="mdc-toolbar__title">Title</h1>
             </div>
             <div class="mdc-toolbar__section mdc-toolbar__section--align-end">
-              <nav class="mdc-tabs mdc-tabs--indicator-accent">
+              <nav class="mdc-tab-bar mdc-tab-bar--indicator-accent">
                 <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
                 <a class="mdc-tab" href="#two">Item Two</a>
                 <a class="mdc-tab" href="#three">Item Three</a>
-                <span class="mdc-tabs__indicator"></span>
+                <span class="mdc-tab-bar__indicator"></span>
               </nav>
             </div>
           </div>
@@ -443,14 +443,14 @@ limitations under the License
         <div class="mdc-toolbar" id="dynamic-demo-toolbar">
           <div class="mdc-toolbar__row">
             <div class="mdc-toolbar__section mdc-toolbar__section--align-start">
-              <nav id="dynamic-tabs" class="mdc-tabs mdc-tabs--indicator-accent" role="tablist">
+              <nav id="dynamic-tab-bar" class="mdc-tab-bar mdc-tab-bar--indicator-accent" role="tablist">
                 <a role="tab" aria-controls="panel-1"
                    class="mdc-tab mdc-tab--active" href="#panel-1">Item One</a>
                 <a role="tab" aria-controls="panel-2"
                    class="mdc-tab" href="#panel-2">Item Two</a>
                 <a role="tab" aria-controls="panel-3"
                    class="mdc-tab" href="#panel-3">Item Three</a>
-                <span class="mdc-tabs__indicator"></span>
+                <span class="mdc-tab-bar__indicator"></span>
               </nav>
             </div>
           </div>
@@ -474,23 +474,23 @@ limitations under the License
     <script>
       (function() {
         setTimeout(function () {
-          window.basicTabs = new mdc.tabs.MDCTabs(document.querySelector('#basic-tabs'));
-          window.scrollableTabs = new mdc.tabs.MDCTabs(document.querySelector('#scrollable-tabs'));
-          window.tabsScroller = new mdc.tabs.MDCTabsScroller(document.querySelector('#tabs-scroller'));
-          window.iconTabs = new mdc.tabs.MDCTabs(document.querySelector('#icon-tabs'));
-          window.iconTextTabs = new mdc.tabs.MDCTabs(document.querySelector('#icon-text-tabs'));
-          window.toolbarTabs = new mdc.tabs.MDCTabs(document.querySelector('#toolbar-tabs'));
-          window.toolbarTabsModified = new mdc.tabs.MDCTabs(document.querySelector('#toolbar-tabs-modified'));
-          window.primaryIndicatorTabs = new mdc.tabs.MDCTabs(document.querySelector('#primary-indicator-tabs'));
-          window.accentIndicatorTabs = new mdc.tabs.MDCTabs(document.querySelector('#accent-indicator-tabs'));
-          window.primaryIndicatorToolbarTabs = new mdc.tabs.MDCTabs(document.querySelector('#toolbar-tabs-primary-indicator'));
-          window.accentIndicatorToolbarTabs = new mdc.tabs.MDCTabs(document.querySelector('#toolbar-tabs-accent-indicator'));
+          window.basicTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#basic-tab-bar'));
+          window.scrollableTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#scrollable-tab-bar'));
+          window.tabBarScroller = new mdc.tabs.MDCTabBarScroller(document.querySelector('#tab-bar-scroller'));
+          window.iconTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#icon-tab-bar'));
+          window.iconTextTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#icon-text-tab-bar'));
+          window.toolbarTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#toolbar-tab-bar'));
+          window.toolbarTabBarModified = new mdc.tabs.MDCTabBar(document.querySelector('#toolbar-tab-bar-modified'));
+          window.primaryIndicatorTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#primary-indicator-tab-bar'));
+          window.accentIndicatorTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#accent-indicator-tab-bar'));
+          window.primaryIndicatorToolbarTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#toolbar-tab-bar-primary-indicator'));
+          window.accentIndicatorToolbarTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#toolbar-tab-bar-accent-indicator'));
 
-          var dynamicTabs = window.dynamicTabs = new mdc.tabs.MDCTabs(document.querySelector('#dynamic-tabs'));
+          var dynamicTabBar = window.dynamicTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#dynamic-tab-bar'));
           var dots = document.querySelector('.dots');
           var panels = document.querySelector('.panels');
 
-          dynamicTabs.preventDefaultOnClick = true;
+          dynamicTabBar.preventDefaultOnClick = true;
 
           function updateDot(index) {
             var activeDot = dots.querySelector('.dot.active');
@@ -514,9 +514,9 @@ limitations under the License
             }
           }
 
-          var t = {detail: dynamicTabs};
+          var t = {detail: dynamicTabBar};
 
-          dynamicTabs.root_.addEventListener('MDCTabs:change', function (t) {
+          dynamicTabBar.root_.addEventListener('MDCTabBar:change', function (t) {
             var nthChildIndex = t.detail.activeTabIndex;
 
             updatePanel(nthChildIndex);
@@ -533,7 +533,7 @@ limitations under the License
             var dotIndex = [].slice.call(dots.querySelectorAll('.dot')).indexOf(evt.target);
 
             if (dotIndex >= 0) {
-              dynamicTabs.foundation_.switchToTabAtIndex(dotIndex, false);
+              dynamicTabBar.foundation_.switchToTabAtIndex(dotIndex, false);
             }
             updatePanel(dotIndex);
             updateDot(dotIndex);
@@ -546,16 +546,16 @@ limitations under the License
           document.getElementById('toggle-rtl').addEventListener('click', function(evt) {
             evt.target.parentElement.hasAttribute('dir') ? evt.target.parentElement.removeAttribute('dir') : evt.target.parentElement.setAttribute('dir', 'rtl');
 
-            window.basicTabs.foundation_.layout()
-            window.scrollableTabs.foundation_.layout();
-            window.iconTabs.foundation_.layout();
-            window.iconTextTabs.foundation_.layout();
-            window.toolbarTabs.foundation_.layout();
-            window.primaryIndicatorTabs.foundation_.layout();
-            window.accentIndicatorTabs.foundation_.layout();
-            window.primaryIndicatorToolbarTabs.foundation_.layout();
-            window.accentIndicatorToolbarTabs.foundation_.layout();
-            window.dynamicTabs.foundation_.layout();
+            window.basicTabBar.foundation_.layout()
+            window.scrollableTabBar.foundation_.layout();
+            window.iconTabBar.foundation_.layout();
+            window.iconTextTabBar.foundation_.layout();
+            window.toolbarTabBar.foundation_.layout();
+            window.primaryIndicatorTabBar.foundation_.layout();
+            window.accentIndicatorTabBar.foundation_.layout();
+            window.primaryIndicatorToolbarTabBar.foundation_.layout();
+            window.accentIndicatorToolbarTabBar.foundation_.layout();
+            window.dynamicTabBar.foundation_.layout();
           });
           document.getElementById('toggle-dark-theme').addEventListener('click', function(evt) {
             document.body.classList.contains('mdc-theme--dark') ? document.body.classList.remove('mdc-theme--dark') : document.body.classList.add('mdc-theme--dark')

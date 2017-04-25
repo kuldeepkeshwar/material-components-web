@@ -19,32 +19,32 @@ import bel from 'bel';
 import domEvents from 'dom-events';
 import td from 'testdouble';
 import {MDCTab} from '../../../packages/mdc-tabs/tab';
-import {MDCTabs} from '../../../packages/mdc-tabs/tabs';
+import {MDCTabBar} from '../../../packages/mdc-tabs/tab-bar';
 
 function getFixture() {
   return bel`
     <div>
-      <nav id="basic-tabs" class="mdc-tabs">
+      <nav id="basic-tabs" class="mdc-tab-bar">
         <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
         <a class="mdc-tab" href="#two">Item Two</a>
         <a class="mdc-tab" href="#three">Three</a>
-        <span class="mdc-tabs__indicator"></span>
+        <span class="mdc-tab-bar__indicator"></span>
       </nav>
     </div>`;
 }
 
 function setupTest() {
   const fixture = getFixture();
-  const root = fixture.querySelector('.mdc-tabs');
-  const indicator = fixture.querySelector('.mdc-tabs__indicator');
-  const component = new MDCTabs(root);
+  const root = fixture.querySelector('.mdc-tab-bar');
+  const indicator = fixture.querySelector('.mdc-tab-bar__indicator');
+  const component = new MDCTabBar(root);
   return {fixture, root, indicator, component};
 }
 
-suite('MDCTabs');
+suite('MDCTabBar');
 
 test('attachTo returns a component instance', () => {
-  assert.isOk(MDCTabs.attachTo(setupTest().root) instanceof MDCTabs);
+  assert.isOk(MDCTabBar.attachTo(setupTest().root) instanceof MDCTabBar);
 });
 
 test('#get tabs returns tabs', () => {
@@ -155,12 +155,12 @@ test('adapter#getOffsetWidthForIndicator returns the width of the active tab ind
   assert.equal(calculatedWidth, indicator.offsetWidth);
 });
 
-test('adapter#notifyChange emits MDCTabs:change with event data', () => {
+test('adapter#notifyChange emits MDCTabBar:change with event data', () => {
   const {component} = setupTest();
 
   const handler = td.func('changeHandler');
 
-  component.listen('MDCTabs:change', handler);
+  component.listen('MDCTabBar:change', handler);
   component.getDefaultFoundation().adapter_.notifyChange({});
 
   td.verify(handler(td.matchers.anything()));

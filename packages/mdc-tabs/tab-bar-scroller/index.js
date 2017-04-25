@@ -16,30 +16,30 @@
 
 import MDCComponent from '@material/base/component';
 
-import MDCTabsScrollerFoundation from './foundation';
+import MDCTabBarScrollerFoundation from './foundation';
 
-export {MDCTabsScrollerFoundation};
+export {MDCTabBarScrollerFoundation};
 
-export class MDCTabsScroller extends MDCComponent {
+export class MDCTabBarScroller extends MDCComponent {
   static attachTo(root) {
-    return new MDCTabsScroller(root);
+    return new MDCTabBarScroller(root);
   }
 
   initialize() {
     this.isRTL = false;
     this.currentTranslateOffset_ = 0;
     this.computedFrameWidth_ = 0;
-    this.scrollFrame = this.root_.querySelector(MDCTabsScrollerFoundation.strings.FRAME_SELECTOR);
-    this.tabs = this.root_.querySelector(MDCTabsScrollerFoundation.strings.TABS_SELECTOR);
-    this.iterableTabs = [].slice.call(this.root_.querySelectorAll(MDCTabsScrollerFoundation.strings.TAB_SELECTOR));
-    this.shiftBackTarget = this.root_.querySelector(MDCTabsScrollerFoundation.strings.INDICATOR_BACK_SELECTOR);
-    this.shiftForwardTarget = this.root_.querySelector(MDCTabsScrollerFoundation.strings.INDICATOR_FORWARD_SELECTOR);
+    this.scrollFrame = this.root_.querySelector(MDCTabBarScrollerFoundation.strings.FRAME_SELECTOR);
+    this.tabs = this.root_.querySelector(MDCTabBarScrollerFoundation.strings.TABS_SELECTOR);
+    this.iterableTabs = [].slice.call(this.root_.querySelectorAll(MDCTabBarScrollerFoundation.strings.TAB_SELECTOR));
+    this.shiftBackTarget = this.root_.querySelector(MDCTabBarScrollerFoundation.strings.INDICATOR_BACK_SELECTOR);
+    this.shiftForwardTarget = this.root_.querySelector(MDCTabBarScrollerFoundation.strings.INDICATOR_FORWARD_SELECTOR);
 
     requestAnimationFrame(() => this.layout_());
   }
 
   getDefaultFoundation() {
-    return new MDCTabsScrollerFoundation({
+    return new MDCTabBarScrollerFoundation({
       isRTL: () =>
         getComputedStyle(this.root_).getPropertyValue('direction') === 'rtl',
       registerBackIndicatorInteractionHandler: (handler) =>
@@ -120,9 +120,9 @@ export class MDCTabsScroller extends MDCComponent {
     const isOverflowing = this.tabs.offsetWidth > this.computedFrameWidth_;
 
     if (isOverflowing) {
-      this.tabs.classList.add(MDCTabsScrollerFoundation.cssClasses.VISIBLE);
+      this.tabs.classList.add(MDCTabBarScrollerFoundation.cssClasses.VISIBLE);
     } else {
-      this.tabs.classList.remove(MDCTabsScrollerFoundation.cssClasses.VISIBLE);
+      this.tabs.classList.remove(MDCTabBarScrollerFoundation.cssClasses.VISIBLE);
       this.currentTranslateOffset_ = 0;
       this.shiftFrame_();
     }
@@ -153,15 +153,15 @@ export class MDCTabsScroller extends MDCComponent {
 
   updateIndicatorEnabledStates_() {
     if (this.currentTranslateOffset_ === 0) {
-      this.shiftBackTarget.classList.add(MDCTabsScrollerFoundation.cssClasses.INDICATOR_DISABLED);
+      this.shiftBackTarget.classList.add(MDCTabBarScrollerFoundation.cssClasses.INDICATOR_DISABLED);
     } else {
-      this.shiftBackTarget.classList.remove(MDCTabsScrollerFoundation.cssClasses.INDICATOR_DISABLED);
+      this.shiftBackTarget.classList.remove(MDCTabBarScrollerFoundation.cssClasses.INDICATOR_DISABLED);
     }
 
     if (this.currentTranslateOffset_ + this.scrollFrame.offsetWidth > this.tabs.offsetWidth) {
-      this.shiftForwardTarget.classList.add(MDCTabsScrollerFoundation.cssClasses.INDICATOR_DISABLED);
+      this.shiftForwardTarget.classList.add(MDCTabBarScrollerFoundation.cssClasses.INDICATOR_DISABLED);
     } else {
-      this.shiftForwardTarget.classList.remove(MDCTabsScrollerFoundation.cssClasses.INDICATOR_DISABLED);
+      this.shiftForwardTarget.classList.remove(MDCTabBarScrollerFoundation.cssClasses.INDICATOR_DISABLED);
     }
   }
 }

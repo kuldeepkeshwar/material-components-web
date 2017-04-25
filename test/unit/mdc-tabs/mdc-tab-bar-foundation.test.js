@@ -19,16 +19,16 @@ import td from 'testdouble';
 import {setupFoundationTest} from '../helpers/setup';
 import {verifyDefaultAdapter} from '../helpers/foundation';
 
-import MDCTabsFoundation from '../../../packages/mdc-tabs/tabs/foundation';
+import MDCTabBarFoundation from '../../../packages/mdc-tabs/tab-bar/foundation';
 
-suite('MDCTabsFoundation');
+suite('MDCTabBarFoundation');
 
 test('exports cssClasses', () => {
-  assert.isOk('cssClasses' in MDCTabsFoundation);
+  assert.isOk('cssClasses' in MDCTabBarFoundation);
 });
 
 test('default adapter returns a complete adapter implementation', () => {
-  verifyDefaultAdapter(MDCTabsFoundation, [
+  verifyDefaultAdapter(MDCTabBarFoundation, [
     'addClass', 'removeClass', 'bindOnMDCTabSelectedEvent',
     'unbindOnMDCTabSelectedEvent', 'registerResizeHandler',
     'deregisterResizeHandler', 'getOffsetWidth', 'setStyleForIndicator',
@@ -41,9 +41,9 @@ test('default adapter returns a complete adapter implementation', () => {
 });
 
 function setupTest() {
-  const {foundation, mockAdapter} = setupFoundationTest(MDCTabsFoundation);
-  const {UPGRADED} = MDCTabsFoundation.cssClasses;
-  const {TAB_SELECTOR, INDICATOR_SELECTOR} = MDCTabsFoundation.strings;
+  const {foundation, mockAdapter} = setupFoundationTest(MDCTabBarFoundation);
+  const {UPGRADED} = MDCTabBarFoundation.cssClasses;
+  const {TAB_SELECTOR, INDICATOR_SELECTOR} = MDCTabBarFoundation.strings;
 
   return {foundation, mockAdapter, UPGRADED, TAB_SELECTOR, INDICATOR_SELECTOR};
 }

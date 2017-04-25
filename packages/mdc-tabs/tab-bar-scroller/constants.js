@@ -1,5 +1,5 @@
 /**
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,17 @@
  */
 
 export const cssClasses = {
-  UPGRADED: 'mdc-tabs-upgraded',
+  VISIBLE: 'mdc-tab-bar-scroller--visible',
+  FOCUSED_CHILD: 'mdc-tab-bar-scroller--focused-child',
+  INDICATOR_FORWARD: 'mdc-tab-bar-scroller__indicator--forward',
+  INDICATOR_BACK: 'mdc-tab-bar-scroller__indicator--back',
+  INDICATOR_DISABLED: 'mdc-tab-bar-scroller__indicator--disabled',
 };
 
 export const strings = {
+  FRAME_SELECTOR: '.mdc-tab-bar-scroller__scroll-frame',
+  TABS_SELECTOR: '.mdc-tab-bar-scroller__scroll-frame__tabs',
   TAB_SELECTOR: '.mdc-tab',
-  INDICATOR_SELECTOR: '.mdc-tabs__indicator',
+  INDICATOR_FORWARD_SELECTOR: '.mdc-tab-bar-scroller__indicator--forward',
+  INDICATOR_BACK_SELECTOR: '.mdc-tab-bar-scroller__indicator--back',
 };

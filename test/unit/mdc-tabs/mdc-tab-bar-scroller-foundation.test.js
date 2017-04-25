@@ -19,16 +19,16 @@ import td from 'testdouble';
 import {setupFoundationTest} from '../helpers/setup';
 import {verifyDefaultAdapter} from '../helpers/foundation';
 
-import MDCTabsScrollerFoundation from '../../../packages/mdc-tabs/tabs-scroller/foundation';
+import MDCTabBarScrollerFoundation from '../../../packages/mdc-tabs/tab-bar-scroller/foundation';
 
-suite('MDCTabsScrollerFoundation');
+suite('MDCTabBarScrollerFoundation');
 
 test('exports cssClasses', () => {
-  assert.isOk('cssClasses' in MDCTabsScrollerFoundation);
+  assert.isOk('cssClasses' in MDCTabBarScrollerFoundation);
 });
 
 test('default adapter returns a complete adapter implementation', () => {
-  verifyDefaultAdapter(MDCTabsScrollerFoundation, [
+  verifyDefaultAdapter(MDCTabBarScrollerFoundation, [
     'isRTL', 'registerBackIndicatorInteractionHandler',
     'deregisterBackIndicatorInteractionHandler',
     'registerForwardIndicatorInteractionHandler',
@@ -39,9 +39,9 @@ test('default adapter returns a complete adapter implementation', () => {
 });
 
 function setupTest() {
-  const {foundation, mockAdapter} = setupFoundationTest(MDCTabsScrollerFoundation);
+  const {foundation, mockAdapter} = setupFoundationTest(MDCTabBarScrollerFoundation);
   const {FRAME_SELECTOR, TABS_SELECTOR, INDICATOR_FORWARD_SELECTOR,
-    INDICATOR_BACK_SELECTOR} = MDCTabsScrollerFoundation.strings;
+    INDICATOR_BACK_SELECTOR} = MDCTabBarScrollerFoundation.strings;
 
   return {foundation, mockAdapter, FRAME_SELECTOR, TABS_SELECTOR,
     INDICATOR_FORWARD_SELECTOR, INDICATOR_BACK_SELECTOR};

@@ -15,5 +15,5 @@
  */
 
 export {MDCTabFoundation, MDCTab} from './tab';
-export {MDCTabsFoundation, MDCTabs} from './tabs';
-export {MDCTabsScrollerFoundation, MDCTabsScroller} from './tabs-scroller';
+export {MDCTabBarFoundation, MDCTabBar} from './tab-bar';
+export {MDCTabBarScrollerFoundation, MDCTabBarScroller} from './tab-bar-scroller';

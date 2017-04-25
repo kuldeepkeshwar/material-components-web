@@ -18,7 +18,7 @@ import MDCFoundation from '@material/base/foundation';
 
 import {cssClasses, strings} from './constants';
 
-export default class MDCTabsFoundation extends MDCFoundation {
+export default class MDCTabBarFoundation extends MDCFoundation {
   static get cssClasses() {
     return cssClasses;
   }
@@ -52,7 +52,7 @@ export default class MDCTabsFoundation extends MDCFoundation {
   }
 
   constructor(adapter) {
-    super(Object.assign(MDCTabsFoundation.defaultAdapter, adapter));
+    super(Object.assign(MDCTabBarFoundation.defaultAdapter, adapter));
 
     this.isIndicatorShown_ = false;
     this.computedWidth_ = 0;

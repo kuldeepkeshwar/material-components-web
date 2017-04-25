@@ -19,7 +19,7 @@ import MDCFoundation from '@material/base/foundation';
 
 import {cssClasses, strings} from './constants';
 
-export default class MDCTabsScrollerFoundation extends MDCFoundation {
+export default class MDCTabBarScrollerFoundation extends MDCFoundation {
   static get cssClasses() {
     return cssClasses;
   }
@@ -44,7 +44,7 @@ export default class MDCTabsScrollerFoundation extends MDCFoundation {
   }
 
   constructor(adapter) {
-    super(Object.assign(MDCTabsScrollerFoundation.defaultAdapter, adapter));
+    super(Object.assign(MDCTabBarScrollerFoundation.defaultAdapter, adapter));
 
     this.forwardIndicatorClickHandler = () => this.scrollForward(this.adapter_.isRTL());
     this.backIndicatorClickHandler = () => this.scrollBack(this.adapter_.isRTL());

@@ -18,13 +18,13 @@ import MDCComponent from '@material/base/component';
 
 import {MDCTab} from '../tab';
 import {strings} from './constants';
-import MDCTabsFoundation from './foundation';
+import MDCTabBarFoundation from './foundation';
 
-export {MDCTabsFoundation};
+export {MDCTabBarFoundation};
 
-export class MDCTabs extends MDCComponent {
+export class MDCTabBar extends MDCComponent {
   static attachTo(root) {
-    return new MDCTabs(root);
+    return new MDCTabBar(root);
   }
 
   get tabs() {
@@ -69,7 +69,7 @@ export class MDCTabs extends MDCComponent {
   }
 
   getDefaultFoundation() {
-    return new MDCTabsFoundation({
+    return new MDCTabBarFoundation({
       addClass: (className) => this.root_.classList.add(className),
       removeClass: (className) => this.root_.classList.remove(className),
       bindOnMDCTabSelectedEvent: () => this.root_.addEventListener('MDCTab:selected', this.tabSelectedHandler_, true),
@@ -80,7 +80,7 @@ export class MDCTabs extends MDCComponent {
       getOffsetWidth: () => this.root_.offsetWidth,
       setStyleForIndicator: (propertyName, value) => this.indicator_.style.setProperty(propertyName, value),
       getOffsetWidthForIndicator: () => this.indicator_.offsetWidth,
-      notifyChange: (evtData) => this.emit('MDCTabs:change', evtData),
+      notifyChange: (evtData) => this.emit('MDCTabBar:change', evtData),
       getNumberOfTabs: () => this.tabs.length,
       getActiveTab: () => this.activeTab,
       isTabActiveAtIndex: (index) => this.tabs[index].isActive,

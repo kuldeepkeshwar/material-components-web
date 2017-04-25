@@ -1,33 +1,36 @@
-# MDC Tabs
+# MDC Tab Bar
 
-The MDC Tabs component is a spec-aligned tabbed navigation component adhering to the
+The MDC Tab Bar component is a spec-aligned tabbed navigation component adhering to the
 [Material Design tabs guidelines](https://material.io/guidelines/components/tabs.html).
 
 ## Installation
 
 ```
-npm install --save @material/tabs
+npm install --save @material/tab-bar
 ```
 
-## Tabs usage
+## Tab Bar usage
 
-Tabs allow users to explore and switch between different views.
-MDC-Tabs can be used as a CSS only component, or a more dynamic JavaScript component.
-There are three different permutations of tab content. These include text, icon-only, and text with icon. An example of each is available on the demo site.
+Tab Bar allow users to explore and switch between different views.
+MDC-Tab-Bar can be used as a CSS only component, or a more dynamic JavaScript
+component.
 
-#### Text Tabs
+There are also three different permutations of tab labels. These include text,
+icon-only, and text with icon. An example of each is available on the demo site.
+
+#### Tab Bar with text labels
 ```html
-<nav id="basic-tabs" class="mdc-tabs">
+<nav id="basic-tab-bar" class="mdc-tab-bar">
   <a class="mdc-tab mdc-tab--active" href="#one">Home</a>
   <a class="mdc-tab" href="#two">Merchandise</a>
   <a class="mdc-tab" href="#three">About Us</a>
-  <span class="mdc-tabs__indicator"></span>
+  <span class="mdc-tab-bar__indicator"></span>
 </nav>
 ```
 
-#### Icon Tabs
+#### Tab Bar with icon labels
 ```html
-<nav class="mdc-tabs mdc-tabs--icon-tabs">
+<nav class="mdc-tab-bar mdc-tab-bar--icon-tab-bar">
   <a class="mdc-tab mdc-tab--active" href="#recents">
     <i class="material-icons mdc-tab__icon" aria-label="Recents">phone</i>
   </a>
@@ -37,13 +40,13 @@ There are three different permutations of tab content. These include text, icon-
   <a class="mdc-tab" href="#nearby">
     <i class="material-icons mdc-tab__icon" aria-label="nearby">person_pin</i>
   </a>
-  <span class="mdc-tabs__indicator"></span>
+  <span class="mdc-tab-bar__indicator"></span>
 </nav>
 ```
 
-#### Text + Icon Tabs
+#### Tab Bar with icon and text labels
 ```html
-<nav id="icon-text-tabs" class="mdc-tabs mdc-tabs--icons-with-text">
+<nav id="icon-text-tab-bar" class="mdc-tab-bar mdc-tab-bar--icons-with-text">
   <a class="mdc-tab mdc-tab--active" href="#recents">
     <i class="material-icons mdc-tab__icon" aria-hidden="true">phone</i>
     <span class="mdc-tab__icon-text">Recents</span>
@@ -56,38 +59,42 @@ There are three different permutations of tab content. These include text, icon-
     <i class="material-icons mdc-tab__icon" aria-hidden="true">person_pin</i>
     <span class="mdc-tab__icon-text">Nearby</span>
   </a>
-  <span class="mdc-tabs__indicator"></span>
+  <span class="mdc-tab-bar__indicator"></span>
 </nav>
 ```
 
 #### RTL Support
 
-Tabs will reverse their order if they are placed within an ancestor element containing a dir attribute with value "rtl". This applies to all tabs regardless of type.
+Tab Bars will reverse the order of their tabs if they are placed within an
+ancestor element with attribute `dir="rtl"`. This applies to all tabs regardless
+of type (`tab-bar`, `tab-bar-scroller`).
 
 ```html
 <html dir="rtl">
   <!--...-->
-  <nav id="basic-tabs" class="mdc-tabs">
+  <nav id="basic-tab-bar" class="mdc-tab-bar">
     <a class="mdc-tab mdc-tab--active" href="#one">Home</a>
     <a class="mdc-tab" href="#two">Merchandise</a>
     <a class="mdc-tab" href="#three">About Us</a>
-    <span class="mdc-tabs__indicator"></span>
+    <span class="mdc-tab-bar__indicator"></span>
   </nav>
 </html>
 ```
 
 #### Dark Mode Support
 
-Like other MDC-Web components, tabs support dark mode either when an mdc-tab--theme-dark class is attached to the root element, or the element has an ancestor with class mdc-theme--dark.
+Like other MDC-Web components, tabs support dark mode either when an
+`mdc-tab--theme-dark` class is attached to the root element, or the element has
+an ancestor with class `mdc-theme--dark`.
 
 ```html
 <html class="mdc-theme--dark">
   <!-- ... -->
-  <nav id="basic-tabs" class="mdc-tabs">
+  <nav id="basic-tab-bar" class="mdc-tab-bar">
     <a class="mdc-tab mdc-tab--active" href="#one">Home</a>
     <a class="mdc-tab" href="#two">Merchandise</a>
     <a class="mdc-tab" href="#three">About Us</a>
-    <span class="mdc-tabs__indicator"></span>
+    <span class="mdc-tab-bar__indicator"></span>
   </nav>
 </html>
 ```
@@ -95,19 +102,20 @@ Like other MDC-Web components, tabs support dark mode either when an mdc-tab--th
 
 ### Dynamic view switching
 
-While facilitating the view switching is left up to the developer, the demo site provides a minimal example of how to do so using JavaScript, also shown below.
+While facilitating the view switching is left up to the developer, the demo site
+provides a minimal example of how to do so using JavaScript, also shown below.
 
 #### Markup:
 ```html
 <section id="dynamic-demo-toolbar">  
-  <nav id="dynamic-tabs" class="mdc-tabs mdc-tabs--indicator-accent" role="tablist">
+  <nav id="dynamic-tab-bar" class="mdc-tab-bar mdc-tab-bar--indicator-accent" role="tablist">
     <a role="tab" aria-controls="panel-1"
        class="mdc-tab mdc-tab--active" href="#panel-1">Item One</a>
     <a role="tab" aria-controls="panel-2"
        class="mdc-tab" href="#panel-2">Item Two</a>
     <a role="tab" aria-controls="panel-3"
        class="mdc-tab" href="#panel-3">Item Three</a>
-    <span class="mdc-tabs__indicator"></span>
+    <span class="mdc-tab-bar__indicator"></span>
   </nav>
 </section>
 <section>
@@ -126,11 +134,11 @@ While facilitating the view switching is left up to the developer, the demo site
 
 #### Script:
 ```js
-var dynamicTabs = window.dynamicTabs = new mdc.tabs.MDCTabs(document.querySelector('#dynamic-tabs'));
+var dynamicTabBar = window.dynamicTabBar = new mdc.tabBar.MDCTabBar(document.querySelector('#dynamic-tab-bar'));
 var dots = document.querySelector('.dots');
 var panels = document.querySelector('.panels');
 
-dynamicTabs.preventDefaultOnClick = true;
+dynamicTabBar.preventDefaultOnClick = true;
 
 function updateDot(index) {
   var activeDot = dots.querySelector('.dot.active');
@@ -154,7 +162,7 @@ function updatePanel(index) {
   }
 }
 
-dynamicTabs.root_.addEventListener('MDCTabs:change', function ({detail: tabs}) {
+dynamicTabs.root_.addEventListener('MDCTabBar:change', function ({detail: tabs}) {
   var nthChildIndex = tabs.activeTabIndex;
 
   updatePanel(nthChildIndex);
@@ -171,7 +179,7 @@ dots.addEventListener('click', function (evt) {
   var dotIndex = [].slice.call(dots.querySelectorAll('.dot')).indexOf(evt.target);
 
   if (dotIndex >= 0) {
-    dynamicTabs.foundation_.switchToTabAtIndex(dotIndex, false);
+    dynamicTabBar.foundation_.switchToTabAtIndex(dotIndex, false);
   }
   updatePanel(dotIndex);
   updateDot(dotIndex);
@@ -180,24 +188,26 @@ dots.addEventListener('click', function (evt) {
 
 ### Using the CSS-Only Component
 
-`mdc-tabs` ships with css for styling a tabs layout according to the Material Design spec.
-To use CSS only tabs, simply use the available class names. Note the available `mdc-tab--active` modifier class.
-This is used to denote the currently active tab.
+`mdc-tab-bar` ships with css for styling a tab layout according to the Material
+Design spec. To use CSS only tab bars, simply use the available class names.
+Note the available `mdc-tab--active` modifier class. This is used to denote the
+currently active tab.
 
 ```html
-<nav class="mdc-tabs">
+<nav class="mdc-tab-bar">
   <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
   <a class="mdc-tab" href="#two">Item Two</a>
   <a class="mdc-tab" href="#three">Three</a>
-  <span class="mdc-tabs__indicator"></span>
+  <span class="mdc-tab-bar__indicator"></span>
 </nav>
 ```
 
 ### Using the JavaScript Component
 
-`mdc-tabs` ships with a Component / Foundation combo for `mdc-tab` (a tab), `mdc-tabs`
-(a collection of type MDC-Tab), and `mdc-tabs-scroller` (used when one or more tabs in
-`mdc-tabs` overflows the available width).
+`mdc-tab-bar` ships with a Component / Foundation combo for `mdc-tab` (a tab),
+`mdc-tab-bar`(a collection components of type MDC-Tab), and
+`mdc-tab-bar-scroller` (provides a set of controls to horizontally scroll
+through tabs that have overflowed their available width).
 
 #### Including in code
 
@@ -205,8 +215,8 @@ This is used to denote the currently active tab.
 
 ```javascript
 import {MDCTab, MDCTabFoundation} from 'mdc-tab';
-import {MDCTabs, MDCTabsFoundation} from 'mdc-tabs';
-import {MDCTabsScroller, MDCTabsScrollerFoundation} from 'mdc-tabs-scroller';
+import {MDCTabBar, MDCTabBarFoundation} from 'mdc-tab-bar';
+import {MDCTabBarScroller, MDCTabBarScrollerFoundation} from 'mdc-tab-bar-scroller';
 ```
 
 ##### CommonJS
@@ -216,13 +226,13 @@ const mdcTab = require('mdc-tabs/tab');
 const MDCTab = mdcTab.MDCTab;
 const MDCTabFoundation = mdcTab.MDCTabFoundation;
 
-const mdcTabs = require('mdc-tabs/tabs');
-const MDCTabs = mdcTabs.MDCTabs;
-const MDCTabsFoundation = mdcTabs.MDCTabsFoundation;
+const mdcTabBar = require('mdc-tabs/tab-bar');
+const MDCTabBar = mdcTabBar.MDCTabBar;
+const MDCTabBarFoundation = mdcTabBar.MDCTabBarFoundation;
 
-const mdcTabsScroller = require('mdc-tabs/tabs-scroller');
-const MDCTabsScroller = mdcTabsScroller.MDCTabsScroller;
-const MDCTabsScrollerFoundation = mdcTab.MDCTabsScrollerFoundation;
+const mdcTabBarScroller = require('mdc-tabs/tab-bar-scroller');
+const MDCTabBarScroller = mdcTabBarScroller.MDCTabBarScroller;
+const MDCTabBarScrollerFoundation = mdcTabBarScroller.MDCTabBarScrollerFoundation;
 ```
 
 ##### AMD
@@ -233,14 +243,14 @@ require(['path/to/mdc-tabs/tab'], mdcTab => {
   const MDCTabFoundation = mdcTab.MDCTabFoundation;
 });
 
-require(['path/to/mdc-tabs/tabs'], mdcTabs => {
-  const MDCTabs = mdcTabs.MDCTabs;
-  const MDCTabsFoundation = mdcTabs.MDCTabsFoundation;
+require(['path/to/mdc-tabs/tab-bar'], mdcTabBar => {
+  const MDCTabBar = mdcTabBar.MDCTabBar;
+  const MDCTabBarFoundation = mdcTabBar.MDCTabBarFoundation;
 });
 
-require(['path/to/mdc-tabs/tabs-scroller'], mdcTabsScroller => {
-  const MDCTabsScroller = mdcTabsScroller.MDCTabsScroller;
-  const MDCTabsScrollerFoundation = mdcTabsScroller.MDCTabsScrollerFoundation;
+require(['path/to/mdc-tabs/tab-bar-scroller'], mdcTabBarScroller => {
+  const MDCTabBarScroller = mdcTabBarScroller.MDCTabBarScroller;
+  const MDCTabBarScrollerFoundation = mdcTabBarScroller.MDCTabBarScrollerFoundation;
 });
 ```
 
@@ -250,39 +260,41 @@ require(['path/to/mdc-tabs/tabs-scroller'], mdcTabsScroller => {
 const MDCTab = mdc.tabs.MDCTab;
 const MDCTabFoundation = mdc.tab.MDCTabFoundation;
 
-const MDCTabs = mdc.tabs.MDCTabs;
-const MDCTabsFoundation = mdc.tabs.MDCTabsFoundation;
+const MDCTabBar = mdc.tabBar.MDCTabBar;
+const MDCTabBarFoundation = mdc.tabBar.MDCTabBarFoundation;
 
-const MDCTabsScroller = mdc.tabs.MDCTabsScroller;
-const MDCTabsScrollerFoundation = mdc.tabsScroller.MDCTabsScrollerFoundation;
+const MDCTabBarScroller = mdc.tabBar.MDCTabBarScroller;
+const MDCTabBarScrollerFoundation = mdc.tabBarScroller.MDCTabBarScrollerFoundation;
 ```
 
 #### Automatic Instantiation
 
-If you do not care about retaining the component instance for the tabs, simply call `attachTo()`
-and pass it a DOM element.
+If you do not care about retaining the component instance for the tabs, simply
+call `attachTo()` and pass it a DOM element.
 
 ```javascript
-mdc.tabs.MDCTabs.attachTo(document.querySelector('#my-mdc-tabs'));
+mdc.tabBar.MDCTabBar.attachTo(document.querySelector('#my-mdc-tab-bar'));
 ```
 
 #### Manual Instantiation
 
-Tabs can easily be initialized using their default constructors as well, similar to `attachTo`. This process involves a factory to create an instance of MDCTab from each tab Element inside of the `mdc-tabs` node, e.g.:
+Tabs can easily be initialized using their default constructors as well, similar
+to `attachTo`. This process involves a factory to create an instance of MDCTab
+from each tab Element inside of the `mdc-tab-bar` node, e.g.:
 
 ```html
-<nav id="my-mdc-tabs" class="mdc-tabs">
+<nav id="my-mdc-tab-bar" class="mdc-tab-bar">
   <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
   <a class="mdc-tab" href="#two">Item Two</a>
   <a class="mdc-tab" href="#three">Three</a>
-  <span class="mdc-tabs__indicator"></span>
+  <span class="mdc-tab-bar__indicator"></span>
 </nav>
 ```
 
 ```javascript
-import {MDCTabs} from 'mdc-tabs';
+import {MDCTabBar} from 'mdc-tab-bar';
 
-const tabs = new MDCTabs(document.querySelector('#my-mdc-tabs'));
+const tabBar = new MDCTabBar(document.querySelector('#my-mdc-tab-bar'));
 ```
 
 ## Tab Section
@@ -352,29 +364,30 @@ Sets tabs `preventDefaultOnClick` property to the value of the `preventDefaultOn
 Sets `computedWidth_` and `computedLeft_` for a tab.
 
 
-## Tabs Section
+## Tab Bar Section
 
-### Tabs component API
+### Tab Bar component API
 
-#### MDCTabs.initialize() => void
+#### MDCTabBar.initialize() => void
 
 Gathers instances of MDC Tab.
 
-#### MDCTabs.initialSyncWithDOM() => void
+#### MDCTabBar.initialSyncWithDOM() => void
 
 Syncs with tab selected in DOM
 
-### Tabs Events
+### Tab Bar Events
 
-#### MDCTabs:change
+#### MDCTabBar:change
 
-Broadcast when a user actions on the tabs, causing a change in selected tab.
+Broadcast when a user actions on a tab, causing a change in selected tab.
 
 
 ### Using the Foundation Class
 
-MDC Tabs ships with an `MDCTabsFoundation` class that external frameworks and libraries can
-use to integrate the component. As with all foundation classes, an adapter object must be provided.
+MDC Tab Bar ships with an `MDCTabBarFoundation` class that external frameworks
+and libraries can use to integrate the component. As with all foundation
+classes, an adapter object must be provided.
 
 
 ### Adapter API
@@ -390,7 +403,7 @@ use to integrate the component. As with all foundation classes, an adapter objec
 | `getOffsetWidth() => number` | Returns width of root element. |
 | `setStyleForIndicator(propertyName: string, value: string) => void` | Sets style property for indicator. |
 | `getOffsetWidthForIndicator() => number` | Returns width of indicator. |
-| `notifyChange(evtData: Object) => void` | Emits `MDCTabs:change` event, passes evtData. |
+| `notifyChange(evtData: Object) => void` | Emits `MDCTabBar:change` event, passes evtData. |
 | `getNumberOfTabs() => number` | Returns number of tabs in MDC Tabs instance. |
 | `getActiveTab() => MDCTab` | Returns the instance of MDCTab that is currently active. |
 | `isTabActiveAtIndex(index: number) => boolean` | Returns true if tab at index is active. |
@@ -404,54 +417,55 @@ use to integrate the component. As with all foundation classes, an adapter objec
 
 ### The full foundation API
 
-#### MDCTabsFoundation.layout() => void
+#### MDCTabBarFoundation.layout() => void
 
-Sets layout for Tabs component.
+Sets layout for the Tab Bar component.
 
-#### MDCTabFoundation.getActiveTabIndex() => number
+#### MDCTabBarFoundation.getActiveTabIndex() => number
 
 Returns index of currently active tab
 
-#### MDCTabFoundation.getComputedWidth() => number
+#### MDCTabBarFoundation.getComputedWidth() => number
 
 Returns the width of the element containing the tabs.
 
-#### MDCTabFoundation.switchToTabAtIndex(index, shouldNotify) => void
+#### MDCTabBarFoundation.switchToTabAtIndex(index, shouldNotify) => void
 
-Updates the active tab to be the tab at the given index, emits `MDCTabs:change` if `shouldNotify` is true.
+Updates the active tab to be the tab at the given index, emits `MDCTabBar:change` if `shouldNotify` is true.
 
 
-## Tabs Scroller Section
+## Tab Bar Scroller Section
 
-### Tabs Scroller component API
+### Tab Bar Scroller component API
 
-#### MDCTabsScroller.initialize() => void
+#### MDCTabBarScroller.initialize() => void
 
-initializes instance of MDC Tabs to be used.
+Sets data regarding which instance of MDC Tab Bar will be scrollable.
 
-#### MDCTabs.layout() => void
+#### MDCTabBarScroller.layout() => void
 
 Lays out left and right indicators, prepares logic for shifting tabs in the scroll frame.
 
-#### MDCTabs.scrollLeft() => void
+#### MDCTabBarScroller.scrollLeft() => void
 
 Scrolls tabs left. If clicked, tabs will shift to the left, revealing tabs previously overflowed to the right.
 This reverses if tabs are in an RTL context.
 
-#### MDCTabs.scrollRight() => void
+#### MDCTabBarScroller.scrollRight() => void
 
 Scrolls tabs right. If clicked, tabs will shift to the right, revealing tabs previously overflowed to the left.
 This reverses if tabs are in an RTL context.
 
-#### MDCTabs.scrollToTab(tab: MDCTab) => void
+#### MDCTabBarScroller.scrollToTab(tab: MDCTab) => void
 
 Shifts to a given tab.
 
 
 ### Using the Foundation Class
 
-MDC Tabs Scroller ships with an `MDCTabsScrollerFoundation` class that external frameworks and libraries can
-use to integrate the component. As with all foundation classes, an adapter object must be provided.
+MDC Tab Bar Scroller ships with an `MDCTabBarScrollerFoundation` class that
+external frameworks and libraries can use to integrate the component. As with
+all foundation classes, an adapter object must be provided.
 
 
 ### Adapter API
@@ -472,10 +486,10 @@ use to integrate the component. As with all foundation classes, an adapter objec
 
 ### The full foundation API
 
-#### MDCTabsFoundation.scrollRight(isRTL) => void
+#### MDCTabBarScrollerFoundation.scrollRight(isRTL) => void
 
 Calls the adapters `scrollRight()` method and passes RTL context as an argument.
 
-#### MDCTabsFoundation.scrollLeft(isRTL) => void
+#### MDCTabBarScrollerFoundation.scrollLeft(isRTL) => void
 
 Calls the adapters `scrollLeft()` method and passes RTL context as an argument.

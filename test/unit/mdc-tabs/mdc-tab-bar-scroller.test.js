@@ -20,19 +20,19 @@ import domEvents from 'dom-events';
 import td from 'testdouble';
 import {createMockRaf} from '../helpers/raf';
 import {supportsCssVariables} from '../../../packages/mdc-ripple/util';
-import {MDCTabsScroller} from '../../../packages/mdc-tabs/tabs-scroller';
+import {MDCTabBarScroller} from '../../../packages/mdc-tabs/tab-bar-scroller';
 
 function getFixture() {
   return bel`
     <div>
-      <div id="tabs-scroller" class="mdc-tabs-scroller">
-        <div class="mdc-tabs-scroller__indicator mdc-tabs-scroller__indicator--back">
-          <a class="mdc-tabs-scroller__indicator__inner material-icons" href="#" aria-label="scroll back button">
+      <div id="tabs-scroller" class="mdc-tab-bar-scroller">
+        <div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
+          <a class="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll back button">
             keyboard-arrow-left
           </a>
         </div>
-        <div class="mdc-tabs-scroller__scroll-frame">
-          <nav id="scrollable-tabs" class="mdc-tabs mdc-tabs-scroller__scroll-frame__tabs">
+        <div class="mdc-tab-bar-scroller__scroll-frame">
+          <nav id="scrollable-tab-bar" class="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs">
             <a class="mdc-tab mdc-tab--active" href="#one">Item One</a>
             <a class="mdc-tab" href="#two">Item Two</a>
             <a class="mdc-tab" href="#three">Item Three</a>
@@ -42,11 +42,11 @@ function getFixture() {
             <a class="mdc-tab" href="#seven">Item Seven</a>
             <a class="mdc-tab" href="#eight">Item Eight</a>
             <a class="mdc-tab" href="#nine">Item Nine</a>
-            <span class="mdc-tabs__indicator"></span>
+            <span class="mdc-tab-bar__indicator"></span>
           </nav>
         </div>
-        <div class="mdc-tabs-scroller__indicator mdc-tabs-scroller__indicator--forward">
-          <a class="mdc-tabs-scroller__indicator__inner material-icons" href="#" aria-label="scroll forward button">
+        <div class="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward">
+          <a class="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll forward button">
             keyboard-arrow-right
           </a>
         </div>
@@ -56,34 +56,34 @@ function getFixture() {
 
 function setupTest() {
   const fixture = getFixture();
-  const root = fixture.querySelector('.mdc-tabs-scroller');
-  const tabs = fixture.querySelector('.mdc-tabs-scroller__scroll-frame__tabs');
+  const root = fixture.querySelector('.mdc-tab-bar-scroller');
+  const tabs = fixture.querySelector('.mdc-tab-bar-scroller__scroll-frame__tabs');
   const backIndicator =
-    fixture.querySelector('.mdc-tabs-scroller__indicator--back');
+    fixture.querySelector('.mdc-tab-bar-scroller__indicator--back');
   const forwardIndicator =
-    fixture.querySelector('.mdc-tabs-scroller__indicator--forward');
+    fixture.querySelector('.mdc-tab-bar-scroller__indicator--forward');
   const scrollFrame =
-    fixture.querySelector('.mdc-tabs-scroller__scroll-frame');
+    fixture.querySelector('.mdc-tab-bar-scroller__scroll-frame');
 
-  const component = new MDCTabsScroller(root);
+  const component = new MDCTabBarScroller(root);
 
   return {fixture, root, backIndicator, forwardIndicator, scrollFrame, tabs, component};
 }
 
-suite('MDCTabsScroller');
+suite('MDCTabBarScroller');
 
 test('attachTo returns a component instance', () => {
   const {root} = setupTest();
 
-  assert.isTrue(MDCTabsScroller.attachTo(root) instanceof MDCTabsScroller);
+  assert.isTrue(MDCTabBarScroller.attachTo(root) instanceof MDCTabBarScroller);
 });
 
-test('#get listOfTabNodes returns list of tabs', () => {
+test('#get iterableTabs returns list of tabs', () => {
   const {component} = setupTest();
 
-  assert.isArray(component.listOfTabNodes);
+  assert.isArray(component.iterableTabs);
 
-  for (const tab of component.listOfTabNodes) {
+  for (const tab of component.iterableTabs) {
     assert.instanceOf(tab, HTMLElement);
   }
 });
